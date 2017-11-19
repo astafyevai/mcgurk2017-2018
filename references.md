@@ -64,6 +64,6 @@ Dekle, D. J., Fowler, C. A., & Funnell, M. G. (1992). Audiovisual integration in
 
 **Subjects**: 33 undergraduate students who participated for course credit in an introductory psychology
 course <br/>
-**Stimuli**: Five of nine trial types (types are listed in Table 2)  <br/>
+**Stimuli**: Five of nine trial types (types are listed in Table 1)  <br/>
 ![Soundtrack and Video Word Pairs Used in
-Experiment 1](/mcgurk2017-2018/dekle_1.jpg)
+Experiment 1](astafyevai/mcgurk2017-2018/dekle_1.jpg)
