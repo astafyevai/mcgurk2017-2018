@@ -33,8 +33,7 @@ acoustically meaningful sentences: <br/>
   •	2% other non-word <br/>
 Differed statictically significantly  
   
-**Results (last words and non-word of the sentence):**  
-
+**Results (last words and non-word of the sentence):** <br/>
 acoustically meaningful sentences: <br/>
   •	8% audio <br/>
   •	33% video <br/>
@@ -57,4 +56,14 @@ acoustically meaningful sentences: <br/>
   
  The McGurk effect is very robust - in the experiment it modifies the perception approximately in 90% of the subjects.  
  
- Название:
+## [Dekle, Fowler, Funnell 1992]  
+
+Dekle, D. J., Fowler, C. A., & Funnell, M. G. (1992). Audiovisual integration in perception of real words. Attention, Perception, & Psychophysics, 51(4), 355-362. <br/>
+
+> Experiment 1.  
+
+**Subjects**: 33 undergraduate students who participated for course credit in an introductory psychology
+course <br/>
+**Stimuli**: Five of nine trial types (types are listed in Table 2)  <br/>
+![Soundtrack and Video Word Pairs Used in
+Experiment 1](/mcgurk2017-2018/dekle_1.jpg)
