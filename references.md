@@ -106,6 +106,18 @@ course
 - no-audio condition - 69% video selections, 31% McGurk responses 
 - with-audio condition - 55% audio selections, 38% McGurk responses, 7% video responses 
 
-[Their conclusion]: McGurk effects occur on nonwords, they occur on words as well; under those same conditions, influences on lipreading (reverse McGurk) are weaker than McGurk effects. 
+[Their conclusion:] McGurk effects occur on nonwords, they occur on words as well; under those same conditions, influences on lipreading (reverse McGurk) are weaker than McGurk effects. 
 
 > Experiment 3.
+
+The McGurk effect itself gives rise to a marked change in the perceiver's phenomenal experience of hearing a word. It seemed possible that the strong McGurk effect and the weak lipreading effect might have different origins. The task was to compare a sequential pair of mouthed words and to decide whether they were the same or different words (lipreading condition).  
+
+**Subjects**: 24 undergraduates from the same population as those who participated in previous experiments/ 12 - hearing condition (McGurk effect), other 12 - the lipreading condition (reverse McGurk effect).
+
+**Stimulus materials**: Five sets of three dubbed word pairs in the lipreading condition and another five sets in the McGurk condition (subjects were instructed to ignore information in the other sensory modality). Stimuli vs. Not-stimuli = 50/50  
+
+*Results*  
+- the subjects' tendency to judge a same pair of words as visibly the same word (lipreading test) or as audibly the same word (hearing test) differently  
+- on the lipreading (reverse McGurk) test - 36% of trials were judged differently  
+- on the hearing test 81% of trials were judged them as the same word repeated (the difference between the conditions is significant)  
+- those in Easton and Basala (1982) were the same in lipreading and McGurk conditions but were biased toward **a strong lipreading effect**  
