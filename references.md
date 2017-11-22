@@ -152,7 +152,7 @@ NB!:  The manner-place hypothesis put forth by MacDonald and McGurk seems to acc
                 4. BOTH-dub having same initial and final visual information as lipped word
                 5. NEITHER-dub in which all visual information differed from that of the lipped word.  
                 
-                ![Examples for DLT](https://github.com/astafyevai/mcgurk2017-2018/blob/master/dekle_1.jpg)  
+![Examples for DLT](https://github.com/astafyevai/mcgurk2017-2018/blob/master/dekle_1.jpg)  
                 
 **Stimuli:**  
 * 30 words in one test: 15 monosyllabic and 15 spondaic
