@@ -86,6 +86,7 @@ Dekle, D. J., Fowler, C. A., & Funnell, M. G. (1992). Audiovisual integration in
 course 
 
 **Stimuli**: Five randomized instances of each of nine trial types (types are listed in Table 1)  
+
 ![Soundtrack and Video Word Pairs Used in Experiment 1](https://github.com/astafyevai/mcgurk2017-2018/blob/master/dekle_1.jpg)
 
 (The stimuli dubbing was accomplished by filtering one token of each of the nine auditory words at 10 kHz, digitizing them at a sampling rate of 20 kHz) 
@@ -121,3 +122,84 @@ The McGurk effect itself gives rise to a marked change in the perceiver's phenom
 - on the lipreading (reverse McGurk) test - 36% of trials were judged differently  
 - on the hearing test 81% of trials were judged them as the same word repeated (the difference between the conditions is significant)  
 - those in Easton and Basala (1982) were the same in lipreading and McGurk conditions but were biased toward **a strong lipreading effect**  
+
+## [Easton, Basala 1982]  
+(это у которых ничего не получилось. почему? авторы предыдущей законспектированной работы считают, что 
+1. Неправильно подобранные стимулы, которые не особенно различаются внешне;
+2. Эффект чтения по губам, а это != эффекту МакГурка;
+3. **МакГурк = фонетика (не лексика)**!)
+
+EASTON, R. D., &: BASALA, M. (1982). Perceptual dominance during lipreading. Perception & Psychophysics, 32, 562-570.  
+NB!:  The manner-place hypothesis put forth by MacDonald and McGurk seems to account for much of the data (but see Summerfield, 1987, for some qualifications).  
+
+"The perceptual task was performed in the presenceof substantial white noise (sufficient to reduce auditory recognition to 50%60%)"
+ 
+> Experiment 1. Standart leapreading indification test (SLT), Dubbed leapreading indification test (DLT), Standart leapreading multiple choice test (SLT), Dubbed leapreading multiple choice test (DLT)
+
+**Subjects**  46 randomly selected students (20 subjects in the first group, 20 subjects in the second group, 6 subjects in control group):
+- group 1 - SLT 
+        * Criteria for SLT:
+                1. CORRECT- the word that was lipped
+                2. INITIAL having same initial visual information as that of lipped word
+                3. FINAL having same final visual information as that of lipped word
+                4. BOTH having same initial and final visual information as lipped word
+                5. NEITHER in which all visual information differed from that of the lipped word.
+- group 2 - DLT
+        * Criteria for DLT:
+                1. SAME-dubbed word same as lipped word
+                2. INITIAL-dub having same initial visual information as that of lipped word
+                3. FINAL-dub having same final visual information as that of lipped word
+                4. BOTH-dub having same initial and final visual information as lipped word
+                5. NEITHER-dub in which all visual information differed from that of the lipped word.  
+                
+                ![Examples for DLT](https://github.com/astafyevai/mcgurk2017-2018/blob/master/dekle_1.jpg)  
+                
+**Stimuli:**  
+* 30 words in one test: 15 monosyllabic and 15 spondaic
+* For each subject - two different tests (indification anf multiple choice)
+
+*Results:*  
+- SLR was superior to DLR
+- multiple choice performance was superior to identification 
+- spondaic words resulted in greater accuracy of lipreading than monosyllabic words
+- observers can read single words on the lips
+- discrepant information is simultaneously present lipreading accuracy drops to about 5% (under visual-auditory discrepancy conditions -  improved to about 42%)
+- errors were distributed equally across the four different dubbing categories (for both types of words)
+- auditory error comprised 32% of the total error
+- monosyllabic words resulted in more auditory error than spondaics
+- auditory error was smallest when the initial and final visualand auditoryphonemesdidnot correspond (NEITHER category)
+
+"It was found that the accuracy of perceived visual speech (lips) was substantially reduced by the presence of discrepant auditory information."  
+"Monosyllabic words were more susceptible to the auditory biasing than were compound words, and the greater the visual-auditory discrepancy (visible-consonant), the smaller the auditory bias effect."
+
+> Experiment 2. 
+
+(with small amounts of discordance, visual bias is substantial, but with larger amounts of discordance, visual bias is found to be lessened (Warren & Cleaves, 1971;Warren, Welch, & McCarthy, 1981))
+
+**Subjects:** 60 undergraduates were assigned randomly to the three groups.
+
+**Stimuli**:  In each of the three tests, the same 32 monosyllabic words were used as the visual stimuli
+1. a standard lipreading (SLR) test in which monosyllabic words were presented to observers, who then were required to identify the lipped word
+2. a high compelling test - dubbed lipreading (DLR), a woman speaker was videotaped as the visual stimulus and her voice was dubbed over as the auditory stimulus
+3. a low compelling test - dubbed lipreading (DLR), a man's voice was used to dub the auditory information over the videotape of the speakingwoman  
+
+stimuli vs. fillers = 1/2
+dubbing category criteria: BOTH and NEITHER  
+
+**asked subjects to rate how confident they were that their response was correct on a five-point scale (1 = complete guess, 3 = modera~y confident,. S = absolutely confident).**  
+
+*Results:*  
+for the SLR  
+* the mean cofidence associated with correct responses was 3.0
+* associated with incorrect responses was 2.3
+* the difference between these average confidence values was significant
+
+for the DLR  
+
+* the low- and highcompellingness subjects did not differ in lipreading accuracy
+* confidence in correct responses was 3.7
+* associated with incorrect responses was 2.3
+* revealed a significant interaction between the compellingness and dub category variables
+* accuracy for the low-compellingness group under the NEITHER dub category resulted in significantly greater accuracy than did the other three conditions
+* large visual-auditory discordance results in the least disruption of lipreading performance
+* The use of auditory dubs to create a visual-auditory speech discrepancydemonstrated that auditory information does indeed dominate during speech recognition
