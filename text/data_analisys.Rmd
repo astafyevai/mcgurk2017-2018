@@ -1,0 +1,118 @@
+## 0. Подготовка
+
+***Ставим пакеты:***
+```{r}
+library(stringr)
+library(tidyverse)
+```
+
+## 1. Визуализация
+
+Проанализируем данные по времени реакции участников на стимул:
+
+```{r}
+#library(ggplot2)
+#library(magrittr)
+#library(dplyr)
+
+data <-  read.csv('https://raw.githubusercontent.com/astafyevai/mcgurk2017-2018/master/csv/time-bxplt.csv')
+data$stimul <- as.factor(data$stimul)
+data$time <- as.numeric(as.character(data$time))
+ggplot(data, aes(stimul, time))+
+  geom_boxplot(aes(group = cut_width(stimul, 1)))+
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+  coord_flip()+
+  theme_bw()+
+  annotate(geom = "text", x = "ab_vg", y = 35, label = "← здесь мы ожидаем эффект", color = "red")+
+  annotate(geom = "text", x = "ab_vg_doubled", y = 35, label = "← здесь мы ожидаем эффект", color = "red")+
+  annotate(geom = "text", x = "ap_vk", y = 35, label = "← здесь мы ожидаем эффект", color = "red")+
+  annotate(geom = "text", x = "ap_vk_doubled", y = 35, label = "← здесь мы ожидаем эффект", color = "red")+
+  labs(x = "стимул", y = "время")
+data$time
+```
+  График содержит диаграммы размаха для каждого отдельно взятого стимула (9 (звонкие одинарные слоги) + 9 (звонкие дублированные слоги) + 9 (глухие одинарные слоги) + 9 (гулхие дублированные слоги) = 36). По оси абсцисс (stimul) подписаны названия всех стимулов, а по оси ординат (time) разброс времени реакции участников. Горизонтальной чертой на каждой отдельной диаграмме показано среднее время реакции на конкретный стимул. Черные точки означают выбросы.
+  Как видно из графика, распределение ответов в основном не превыщает 10 секунд. Сравнив время реакции на одинарные и дублированные стимулы, можно заметить, что в целом на распознавание дублированных слогов уходит больше времени, однако стоит учитывать, что респонденты записывали ответы на листок, и время реакции могло увеличиться по этой причине. Вместе с тем, необходимо учитывать, что PsychoPy работает нестабильно, поэтому некоторые неожиданные результаты могут быть связаны с техническими перебоями. По графику нетрудно заметить, что стимулы, над которыми больше всего думали носители - это ak_vp_doubled, ap_at, ap_vp, ak_vt_doubled (где первая пара букв - аудио стимул с конкретным взрывным, вторая пара букв - видео стимул с конкретным взрывным, наличие/отсутствие doubled - одинарные/двойные повторения соответственно). Те видеозаписи, где мог бы оказаться искомый эффект (ab_vg, ab_vg_doubled, ap_vk, ap_vk_doubled) визуально не отличаются от остальных стимулов.
+
+Посмотрим на ответы респондентов, которые смотрели видеозаписи со звонкими стимулами.
+
+```{r}
+df <- read.csv("https://raw.githubusercontent.com/astafyevai/mcgurk2017-2018/master/csv/McGurk.csv")
+df[df$voiced == "voiced",] %>%
+  count(doubled, audio, video, response, sort = TRUE) %>% 
+  ggplot(aes(audio, video, size = n))+
+  geom_point(aes(size = n), alpha=0.8, color="pink", show.legend =FALSE) +
+  geom_text(aes(label = n), color="black", size = 4) +
+  scale_size(range = c(3,20)) +
+  facet_grid(doubled~response)+
+  theme_bw()+
+  labs(x = "audio stimulus",
+       y = "video stimulus",
+       title = "Voiced results grouped by double/single")
+```
+График разделен на 4 столбца (ответы респондентов) и 2 строки (одинарные и двойные повторения стимулов). По графику нетрудно заметить, что распределение ответов почти полностью связано с аудио, а не с видео стимулом. Ответов, которые не совпали с аудио и комментариев участника эксперимента практически нет. В ответ "другое" (стобец (-)) попали ответы **ВОТ ТАКИЕ**. Сравним это с результатами тех респондентов, которые смотрели видеозаписи с глухими стимулами. 
+
+```{r}
+df <- read.csv("McGurk.csv")
+df[df$voiced == "unvoiced",] %>%
+  count(doubled, audio, video, response, sort = TRUE) %>% 
+  ggplot(aes(audio, video, size = n))+
+  geom_point(aes(size = n), alpha=0.8, color="pink", show.legend =FALSE) +
+  geom_text(aes(label = n), color="black", size = 4) +
+  scale_size(range = c(3,20)) +
+  facet_grid(doubled~response)+
+  theme_bw()+
+  labs(x = "audio stimulus",
+       y = "video stimulus",
+       title = "Unvoiced results grouped by double/single")
+```
+Графики сильно отличаются друг от друга. Из графика видно, что  распределение ответов также, видимо, связано с аудио, а не видео стимулом, но ответов, не совпавших с аудио значительно больше. В ответы столбца "-" попали **вот такие стимулы**.
+Появляется ощущение, что носители отвечают по-разному в зависимости от того, глухие или звонкие стимулы, но эта разница не значительна. 
+
+С помощью тестов проверим, являются ли эти отличия статистически значимы. Перечислим некоторые факты, которые мы хотим доказать:
+
++ разница в ответах между респондентами, знавшими и не знавшими, что такое эффект МакГурка не является статистически значимой;
++ разница в ответах между респондентами смотревших одинарные и дублированные стимулы не является статистически значимой;
++ разница в ответах между респондентами разного пола не является стастистически значимой;
++ ответы респондентов в нашем эксперименте скорее совпадают с аудио стимулом, а не с видео стимулом.
+
+```{r}
+my_df <- read.csv("https://raw.githubusercontent.com/astafyevai/mcgurk2017-2018/master/csv/McGurk.csv")
+my_df[my_df$voiced == "unvoiced" & my_df$doubled == "doubled",] %>%
+  na.omit() %>% 
+  count(audio,video,response, knowledge.about.McGurk) %>% 
+  spread(key = knowledge.about.McGurk, value = n) %>% 
+  mutate(no = ifelse(is.na(no), as.integer(0), no),
+         yes = ifelse(is.na(yes), as.integer(0), yes),
+         type = paste(audio,video, response)) %>% 
+  ungroup() %>% 
+  select(type, no, yes) ->
+  my_df_UD_mcgurk_test
+fisher.test(my_df_UD_mcgurk_test[,-1],simulate.p.value=TRUE,B=1e5)
+```
+
+#### Зависит ли количество повторяющихся ответов на одни и те же сочетания (audio, video) от пола?
+Все в совокупности: p-value 0.3722
+В группе "unvoiced doubled":p-value 0.9845
+В группе "voiced doubled":p-value 1
+В группе "unvoiced single":p-value 0.7018
+В группе "voiced single":p-value 0.6458
+
+#### Зависит ли количество повторяющихся ответов на одни и те же сочетания (audio, video) от одинарных/дублированных стимулов?
+В группе voiced: p-value 1
+В группе unvoiced: p-value 0.5287
+Во всей совокупности: p-value 0.9572 
+
+#### Зависит ли количество повторяющихся ответов на одни и те же сочетания (audio, video) от параметра звонкости/глухости?
+В группе double: p-value 0.9883
+В группе single: p-value 0.1598
+Во всей совокупности: p-value 0.2065
+
+#### Зависит ли количество повторяющихся ответов на одни и те же сочетания (audio, video) от знания, что такое эффект МакГурка?
+Во всей совокупности: p-value 0.5017
+В группе "voiced doubled": p-value 1
+В группе "voiced single": p-value 0.9795
+В группе "unvoiced single": p-value 0.6537
+В группе "unvoiced doubled": p-value 0.9984
+
+
+***Везде выский p-value (> 0.05) => все различия не являются статистически значимыми, и у нас нет оснований отбрасывать нулевую гипотезу***
